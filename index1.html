@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniteWorkUA | Робота в Україні</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-blue-50 text-gray-900">
+
+    <!-- Header -->
+    <header class="bg-blue-600 text-white shadow-md sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="text-2xl font-bold flex items-center gap-2">
+                <span class="text-yellow-400">UNITE</span>WORK<span class="text-yellow-400">UA</span>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <select id="langSwitcher" onchange="changeLanguage(this.value)" class="bg-blue-700 border border-blue-500 text-white rounded-md px-2 py-1 text-sm font-medium focus:outline-none cursor-pointer">
+                    <option value="uk">🇺🇦 UA</option>
+                    <option value="en">🇬🇧 EN</option>
+                    <option value="pl">🇵🇱 PL</option>
+                    <option value="ru">🇷🇺 RU</option>
+                    <option value="tr">🇹🇷 TR</option>
+                    <option value="tg">🇹🇯 TG</option>
+                    <option value="uz">🇺🇿 UZ</option>
+                    <option value="hi">🇮🇳 HI</option>
+                </select>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="max-w-7xl mx-auto px-6 py-16">
+        <section class="text-center bg-white p-10 rounded-3xl shadow-lg border-t-8 border-yellow-400">
+            <h1 data-i18n="hero_title" class="text-4xl md:text-5xl font-bold mb-6 leading-tight text-blue-900">Будуйте своє майбутнє в Україні</h1>
+            <p data-i18n="hero_subtitle" class="text-lg text-gray-700 mb-10 max-w-2xl mx-auto">Ми допомагаємо іноземним фахівцям знайти стабільну роботу, оформити документи та облаштуватися. Чесна оплата, легальність та підтримка на кожному етапі.</p>
+            <button onclick="document.getElementById('job-apply').scrollIntoView({behavior: 'smooth'})" data-i18n="btn_find_job" class="bg-yellow-400 text-blue-900 px-10 py-4 rounded-xl font-bold hover:bg-yellow-500 shadow-xl transition transform hover:scale-105">Знайти роботу</button>
+        </section>
+
+        <!-- Services -->
+        <section id="services" class="py-16">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-blue-100 text-center">
+                    <div class="text-yellow-500 text-4xl mb-4">📄</div>
+                    <h3 data-i18n="card1_title" class="text-xl font-bold mb-3 text-blue-900">Легальне працевлаштування</h3>
+                    <p data-i18n="card1_desc" class="text-gray-600">Допомога з документами та візовою підтримкою.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-blue-100 text-center">
+                    <div class="text-yellow-500 text-4xl mb-4">🏠</div>
+                    <h3 data-i18n="card2_title" class="text-xl font-bold mb-3 text-blue-900">Житло та адаптація</h3>
+                    <p data-i18n="card2_desc" class="text-gray-600">Комфортні умови проживання біля місця роботи.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-blue-100 text-center">
+                    <div class="text-yellow-500 text-4xl mb-4">🤝</div>
+                    <h3 data-i18n="card3_title" class="text-xl font-bold mb-3 text-blue-900">Стабільна оплата</h3>
+                    <p data-i18n="card3_desc" class="text-gray-600">Гарантія виплат та чесні умови праці.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Job Apply Form -->
+        <section id="job-apply" class="bg-blue-900 rounded-3xl p-10 md:p-16 text-white mt-10 shadow-2xl">
+            <div class="max-w-3xl mx-auto">
+                <h2 data-i18n="apply_title" class="text-3xl font-bold mb-6">Заповніть анкету кандидата</h2>
+                <p data-i18n="apply_subtitle" class="text-blue-200 mb-8">Ми зв'яжемося з вами найближчим часом для пропозиції вакансій.</p>
+                
+                <form action="https://formspree.io/f/xojbgyjg" method="POST" class="grid md:grid-cols-2 gap-4">
+                    <input type="text" name="name" data-i18n-placeholder="placeholder_name" placeholder="Ваше ім'я" class="p-4 rounded-lg text-gray-900 border-2 border-transparent focus:border-yellow-400 outline-none" required>
+                    <input type="text" name="phone" data-i18n-placeholder="placeholder_phone" placeholder="Телефон / WhatsApp / Telegram" class="p-4 rounded-lg text-gray-900 border-2 border-transparent focus:border-yellow-400 outline-none" required>
+                    <input type="text" name="specialty" data-i18n-placeholder="placeholder_spec" placeholder="Ваша спеціальність" class="p-4 rounded-lg text-gray-900 border-2 border-transparent focus:border-yellow-400 outline-none" required>
+                    <select name="country" class="p-4 rounded-lg text-gray-900 border-2 border-transparent focus:border-yellow-400 outline-none">
+                        <option data-i18n="option_country_select">Країна походження</option>
+                        <option>Uzbekistan</option>
+                        <option>Tajikistan</option>
+                        <option>India</option>
+                        <option>Other</option>
+                    </select>
+                    <textarea name="message" data-i18n-placeholder="placeholder_message" placeholder="Додаткова інформація" class="md:col-span-2 p-4 rounded-lg text-gray-900 h-32 border-2 border-transparent focus:border-yellow-400 outline-none"></textarea>
+                    <button type="submit" data-i18n="btn_send_app" class="md:col-span-2 bg-yellow-400 hover:bg-yellow-500 text-blue-900 p-4 rounded-lg font-bold text-lg">Відправити заявку</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-10 text-blue-800 text-sm">
+        &copy; 2026 UniteWorkUA. <span data-i18n="footer_text">Ми працюємо легально та безпечно.</span>
+    </footer>
+
+    <script>
+        const translations = {
+            uk: {
+                hero_title: "Будуйте своє майбутнє в Україні",
+                hero_subtitle: "Ми допомагаємо іноземним фахівцям знайти стабільну роботу, оформити документи та облаштуватися. Чесна оплата, легальність та підтримка.",
+                btn_find_job: "Знайти роботу",
+                card1_title: "Легальне працевлаштування",
+                card1_desc: "Допомога з документами та візовою підтримкою.",
+                card2_title: "Житло та адаптація",
+                card2_desc: "Комфортні умови проживання біля місця роботи.",
+                card3_title: "Стабільна оплата",
+                card3_desc: "Гарантія виплат та чесні умови праці.",
+                apply_title: "Заповніть анкету кандидата",
+                apply_subtitle: "Ми зв'яжемося з вами найближчим часом для пропозиції вакансій.",
+                placeholder_name: "Ваше ім'я",
+                placeholder_phone: "Телефон / WhatsApp / Telegram",
+                placeholder_spec: "Ваша спеціальність",
+                option_country_select: "Країна походження",
+                placeholder_message: "Додаткова інформація",
+                btn_send_app: "Відправити заявку",
+                footer_text: "Ми працюємо легально та безпечно."
+            },
+            en: {
+                hero_title: "Build your future in Ukraine",
+                hero_subtitle: "We help foreign professionals find stable jobs, handle documents, and settle in. Fair pay, legality, and support.",
+                btn_find_job: "Find a job",
+                card1_title: "Legal Employment",
+                card1_desc: "Visa assistance and document help.",
+                card2_title: "Housing & Adaptation",
+                card2_desc: "Comfortable accommodation near the workplace.",
+                card3_title: "Stable Salary",
+                card3_desc: "Guaranteed payments and fair working conditions.",
+                apply_title: "Fill out the candidate form",
+                apply_subtitle: "We will contact you shortly to offer current vacancies.",
+                placeholder_name: "Your name",
+                placeholder_phone: "Phone / WhatsApp / Telegram",
+                placeholder_spec: "Your specialty",
+                option_country_select: "Country of origin",
+                placeholder_message: "Additional info",
+                btn_send_app: "Submit application",
+                footer_text: "We work legally and safely."
+            },
+            pl: {
+                hero_title: "Zbuduj swoją przyszłość na Ukrainie",
+                hero_subtitle: "Pomagamy zagranicznym specjalistom znaleźć stabilną pracę, załatwić dokumenty i się zadomowić. Uczciwa płaca, legalność i wsparcie.",
+                btn_find_job: "Znajdź pracę",
+                card1_title: "Legalne zatrudnienie",
+                card1_desc: "Wsparcie wizowe i pomoc w dokumentach.",
+                card2_title: "Mieszkanie i adaptacja",
+                card2_desc: "Komfortowe warunki mieszkaniowe w pobliżu pracy.",
+                card3_title: "Stabilna pensja",
+                card3_desc: "Gwarancja wypłat i uczciwe warunki pracy.",
+                apply_title: "Wypełnij ankietę kandydata",
+                apply_subtitle: "Skontaktujemy się z Tobą wkrótce, aby zaproponować oferty pracy.",
+                placeholder_name: "Twoje imię",
+                placeholder_phone: "Telefon / WhatsApp / Telegram",
+                placeholder_spec: "Twoja specjalizacja",
+                option_country_select: "Kraj pochodzenia",
+                placeholder_message: "Dodatkowe informacje",
+                btn_send_app: "Wyślij zgłoszenie",
+                footer_text: "Pracujemy legalnie i bezpiecznie."
+            },
+            ru: {
+                hero_title: "Постройте свое будущее в Украине",
+                hero_subtitle: "Мы помогаем иностранным специалистам найти стабильную работу, оформить документы и устроиться. Честная оплата, легальность и поддержка.",
+                btn_find_job: "Найти работу",
+                card1_title: "Легальное трудоустройство",
+                card1_desc: "Помощь с документами и визовой поддержкой.",
+                card2_title: "Жилье и адаптация",
+                card2_desc: "Комфортные условия проживания возле места работы.",
+                card3_title: "Стабильная оплата",
+                card3_desc: "Гарантия выплат и честные условия труда.",
+                apply_title: "Заполните анкету кандидата",
+                apply_subtitle: "Мы свяжемся с вами в ближайшее время для предложения вакансий.",
+                placeholder_name: "Ваше имя",
+                placeholder_phone: "Телефон / WhatsApp / Telegram",
+                placeholder_spec: "Ваша специальность",
+                option_country_select: "Страна происхождения",
+                placeholder_message: "Дополнительная информация",
+                btn_send_app: "Отправить заявку",
+                footer_text: "Мы работаем легально и безопасно."
+            },
+            tr: {
+                hero_title: "Ukrayna'da geleceğinizi inşa edin",
+                hero_subtitle: "Yabancı profesyonellerin istikrarlı iş bulmalarına, belgeleri halletmelerine ve yerleşmelerine yardımcı oluyoruz. Adil ücret, yasallık ve destek.",
+                btn_find_job: "İş bul",
+                card1_title: "Yasal İstihdam",
+                card1_desc: "Vize yardımı ve evrak desteği.",
+                card2_title: "Konaklama ve Adaptasyon",
+                card2_desc: "İş yerinizin yakınında konforlu yaşam.",
+                card3_title: "İstikrarlı Ücret",
+                card3_desc: "Garantili ödemeler ve adil çalışma koşulları.",
+                apply_title: "Aday formunu doldurun",
+                apply_subtitle: "Güncel iş fırsatlarını sunmak için yakında sizinle iletişime geçeceğiz.",
+                placeholder_name: "Adınız",
+                placeholder_phone: "Telefon / WhatsApp / Telegram",
+                placeholder_spec: "Uzmanlığınız",
+                option_country_select: "Menşe ülke",
+                placeholder_message: "Ek bilgi",
+                btn_send_app: "Başvuruyu gönder",
+                footer_text: "Yasal ve güvenli çalışıyoruz."
+            },
+            tg: {
+                hero_title: "Ояндаи худро дар Украина бунёд кунед",
+                hero_subtitle: "Мо ба мутахассисони хориҷӣ дар ёфтани кори устувор, тартиб додани ҳуҷҷатҳо ва ҷойгиршавӣ кумак мекунем. Музди одилона, қонуният ва дастгирӣ.",
+                btn_find_job: "Кор ёбед",
+                card1_title: "Шуғли қонунӣ",
+                card1_desc: "Дастгирии виза ва ҳуҷҷатҳо.",
+                card2_title: "Ҷойгиршавӣ ва мутобиқшавӣ",
+                card2_desc: "Шароити бароҳати зист дар наздикии ҷои кор.",
+                card3_title: "Пардохти устувор",
+                card3_desc: "Кафолати пардохтҳо ва шароити одилонаи корӣ.",
+                apply_title: "Анкетаи номзадро пур кунед",
+                apply_subtitle: "Мо бо шумо дар наздиктарин фурсат тамос мегирем, то ҷойҳои холиро пешниҳод кунем.",
+                placeholder_name: "Номи шумо",
+                placeholder_phone: "Телефон / WhatsApp / Telegram",
+                placeholder_spec: "Касби шумо",
+                option_country_select: "Кишвари пайдоиш",
+                placeholder_message: "Маълумоти иловагӣ",
+                btn_send_app: "Дархостро фиристед",
+                footer_text: "Мо қонунӣ ва бехатар кор мекунем."
+            },
+            uz: {
+                hero_title: "Ukrainada kelajagingizni quring",
+                hero_subtitle: "Biz chet ellik mutaxassislarga barqaror ish topishda, hujjatlarni rasmiylashtirishda va joylashishda yordam beramiz. Halol haq, qonuniylik va qo'llab-quvvatlash.",
+                btn_find_job: "Ish topish",
+                card1_title: "Qonuniy ish bilan ta'minlash",
+                card1_desc: "Viza yordami va hujjatlarni rasmiylashtirish.",
+                card2_title: "Yashash va moslashuv",
+                card2_desc: "Ish joyi yaqinida qulay yashash sharoitlari.",
+                card3_title: "Barqaror ish haqi",
+                card3_desc: "To'lovlar kafolati va adolatli mehnat sharoitlari.",
+                apply_title: "Nomzod anketasini to'ldiring",
+                apply_subtitle: "Joriy vakansiyalarni taklif qilish uchun yaqin vaqt ichida siz bilan bog'lanamiz.",
+                placeholder_name: "Ismingiz",
+                placeholder_phone: "Telefon / WhatsApp / Telegram",
+                placeholder_spec: "Mutaxassisligingiz",
+                option_country_select: "Kelib chiqqan mamlakat",
+                placeholder_message: "Qo'shimcha ma'lumot",
+                btn_send_app: "Ariza yuborish",
+                footer_text: "Biz qonuniy va xavfsiz ishlaymiz."
+            },
+            hi: {
+                hero_title: "यूक्रेन में अपना भविष्य बनाएं",
+                hero_subtitle: "हम विदेशी पेशेवरों को स्थिर नौकरी खोजने, दस्तावेज संभालने और सेटल होने में मदद करते हैं। उचित वेतन, वैधता और समर्थन।",
+                btn_find_job: "नौकरी खोजें",
+                card1_title: "कानूनी रोजगार",
+                card1_desc: "वीज़ा सहायता और दस्तावेज़ीकरण।",
+                card2_title: "आवास और अनुकूलन",
+                card2_desc: "कार्यस्थल के पास आरामदायक आवास।",
+                card3_title: "स्थिर वेतन",
+                card3_desc: "भुगतान की गारंटी और उचित काम की स्थिति।",
+                apply_title: "उम्मीदवार फॉर्म भरें",
+                apply_subtitle: "वर्तमान रिक्तियों की पेशकश करने के लिए हम जल्द ही आपसे संपर्क करेंगे।",
+                placeholder_name: "आपका नाम",
+                placeholder_phone: "फोन / व्हाट्सएप / टेलीग्राम",
+                placeholder_spec: "आपकी विशेषता",
+                option_country_select: "मूल देश",
+                placeholder_message: "अतिरिक्त जानकारी",
+                btn_send_app: "आवेदन भेजें",
+                footer_text: "हम कानूनी और सुरक्षित रूप से काम करते हैं।"
+            }
+        };
+
+        function changeLanguage(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.innerText = translations[lang][key];
+                }
+            });
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (translations[lang][key]) {
+                    el.setAttribute('placeholder', translations[lang][key]);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
